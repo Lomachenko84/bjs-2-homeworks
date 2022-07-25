@@ -1,6 +1,7 @@
 function parseCount (index){
-    if(!isNaN(Number.parseInt(index))){
-        return Number.parseInt(index) 
+    let y = Number.parseInt(index)
+    if(!isNaN(y)){
+        return y 
     }
     throw new Error("Невалидное значение");
 }
@@ -23,11 +24,11 @@ class Triangle {
             throw new Error("Треугольник с такими сторонами не существует");   
         }
     }
-    getPerimeter = function (){
+    getPerimeter(){
         return this.a+this.b+this.c
     }
-    getArea = function (){
-        let p = (this.a+this.b+this.c)/2
+    getArea(){
+        let p = this.getPerimeter()/2
         return parseFloat(Math.sqrt(p*(p-this.a)*(p-this.b)*(p-this.c)).toFixed(3));
 
     }
